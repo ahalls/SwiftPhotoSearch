@@ -10,6 +10,7 @@ import UIKit
 
     class ViewController: UIViewController, UISearchBarDelegate {
 
+      @IBOutlet weak var searchBar: UISearchBar!
       @IBOutlet weak var scrollView: UIScrollView!
 
       let instagramClientID = "d782212a48f44653bea97452dd87da2b"
@@ -55,7 +56,8 @@ import UIKit
 
       override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        assert( (scrollView != nil), "scrollView not linked in the Storyboard")
+        assert( (searchBar?.delegate != nil), "searchBar.delegate not linked in the Storyboard")
 
         searchInstagramByHashtag("clararockmore")
       }

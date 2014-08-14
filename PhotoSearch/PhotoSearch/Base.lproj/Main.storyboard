@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,7 +51,8 @@
                         <size key="landscapeSize" width="568" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
-                        <outlet property="scrollView" destination="Ie7-9Y-RkD" id="DZy-gk-RGT"/>
+                        <outlet property="scrollView" destination="Ie7-9Y-RkD" id="8xD-n0-GY3"/>
+                        <outlet property="searchBar" destination="B7H-tB-RaM" id="11e-ZX-1aj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BA11DC528AF84CFABE8C3D37 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82909AFCD6FF4A79AFA4412B /* libPods.a */; };
+		F10661D9199CE61700E69852 /* InstagramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10661D8199CE61700E69852 /* InstagramService.swift */; };
 		F1A3CAF5199C552B0015D57C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3CAF4199C552B0015D57C /* AppDelegate.swift */; };
 		F1A3CAF7199C552B0015D57C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3CAF6199C552B0015D57C /* ViewController.swift */; };
 		F1A3CAFA199C552B0015D57C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A3CAF8199C552B0015D57C /* Main.storyboard */; };
 		F1A3CAFC199C552B0015D57C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A3CAFB199C552B0015D57C /* Images.xcassets */; };
 		F1A3CB08199C552B0015D57C /* PhotoSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3CB07199C552B0015D57C /* PhotoSearchTests.swift */; };
+		F1EB7B5A199C833400D77AB9 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB7B59199C833400D77AB9 /* ViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,7 @@
 /* Begin PBXFileReference section */
 		06B69C1F4A7D45DC8598938E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		82909AFCD6FF4A79AFA4412B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10661D8199CE61700E69852 /* InstagramService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramService.swift; sourceTree = "<group>"; };
 		F1A3CAEF199C552B0015D57C /* PhotoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A3CAF3199C552B0015D57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A3CAF4199C552B0015D57C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,8 @@
 		F1A3CB06199C552B0015D57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A3CB07199C552B0015D57C /* PhotoSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchTests.swift; sourceTree = "<group>"; };
 		F1A83D58199C5A84005011D8 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		F1EB7B57199C81A600D77AB9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		F1EB7B59199C833400D77AB9 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +67,18 @@
 		1FBD24D8502F4545B4EFF3A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1EB7B57199C81A600D77AB9 /* libPods.a */,
 				82909AFCD6FF4A79AFA4412B /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F10661D7199CE5A500E69852 /* InstagramService */ = {
+			isa = PBXGroup;
+			children = (
+				F10661D8199CE61700E69852 /* InstagramService.swift */,
+			);
+			name = InstagramService;
 			sourceTree = "<group>";
 		};
 		F1A3CAE6199C552B0015D57C = {
@@ -90,6 +104,7 @@
 		F1A3CAF1199C552B0015D57C /* PhotoSearch */ = {
 			isa = PBXGroup;
 			children = (
+				F10661D7199CE5A500E69852 /* InstagramService */,
 				F1A3CAF4199C552B0015D57C /* AppDelegate.swift */,
 				F1A3CAF6199C552B0015D57C /* ViewController.swift */,
 				F1A3CAF8199C552B0015D57C /* Main.storyboard */,
@@ -111,6 +126,7 @@
 		F1A3CB04199C552B0015D57C /* PhotoSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1EB7B59199C833400D77AB9 /* ViewControllerTests.swift */,
 				F1A3CB07199C552B0015D57C /* PhotoSearchTests.swift */,
 				F1A3CB05199C552B0015D57C /* Supporting Files */,
 			);
@@ -260,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A3CAF7199C552B0015D57C /* ViewController.swift in Sources */,
+				F10661D9199CE61700E69852 /* InstagramService.swift in Sources */,
 				F1A3CAF5199C552B0015D57C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1EB7B5A199C833400D77AB9 /* ViewControllerTests.swift in Sources */,
 				F1A3CB08199C552B0015D57C /* PhotoSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +433,12 @@
 				);
 				INFOPLIST_FILE = PhotoSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoSearch.app/PhotoSearch";
 			};
 			name = Debug;
@@ -430,7 +453,12 @@
 				);
 				INFOPLIST_FILE = PhotoSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoSearch.app/PhotoSearch";
 			};
 			name = Release;
