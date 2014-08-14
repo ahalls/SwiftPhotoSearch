@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="height" constant="44" id="TKm-P4-3Bc"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="f8f-WT-ymN"/>
+                                </connections>
                             </searchBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-9Y-RkD">
                                 <rect key="frame" x="0.0" y="64" width="568" height="256"/>
@@ -50,7 +53,6 @@
                     </simulatedScreenMetrics>
                     <connections>
                         <outlet property="scrollView" destination="Ie7-9Y-RkD" id="DZy-gk-RGT"/>
-                        <outlet property="searchBar" destination="B7H-tB-RaM" id="FhK-aU-cya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
