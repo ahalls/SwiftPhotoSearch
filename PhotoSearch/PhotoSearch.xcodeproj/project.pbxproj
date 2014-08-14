@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA11DC528AF84CFABE8C3D37 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82909AFCD6FF4A79AFA4412B /* libPods.a */; };
 		F1A3CAF5199C552B0015D57C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3CAF4199C552B0015D57C /* AppDelegate.swift */; };
 		F1A3CAF7199C552B0015D57C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3CAF6199C552B0015D57C /* ViewController.swift */; };
 		F1A3CAFA199C552B0015D57C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A3CAF8199C552B0015D57C /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06B69C1F4A7D45DC8598938E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		82909AFCD6FF4A79AFA4412B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A3CAEF199C552B0015D57C /* PhotoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A3CAF3199C552B0015D57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A3CAF4199C552B0015D57C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		F1A3CB01199C552B0015D57C /* PhotoSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A3CB06199C552B0015D57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A3CB07199C552B0015D57C /* PhotoSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchTests.swift; sourceTree = "<group>"; };
+		F1A83D58199C5A84005011D8 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA11DC528AF84CFABE8C3D37 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FBD24D8502F4545B4EFF3A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82909AFCD6FF4A79AFA4412B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1A3CAE6199C552B0015D57C = {
 			isa = PBXGroup;
 			children = (
 				F1A3CAF1199C552B0015D57C /* PhotoSearch */,
 				F1A3CB04199C552B0015D57C /* PhotoSearchTests */,
 				F1A3CAF0199C552B0015D57C /* Products */,
+				06B69C1F4A7D45DC8598938E /* Pods.xcconfig */,
+				1FBD24D8502F4545B4EFF3A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +95,7 @@
 				F1A3CAF8199C552B0015D57C /* Main.storyboard */,
 				F1A3CAFB199C552B0015D57C /* Images.xcassets */,
 				F1A3CAF2199C552B0015D57C /* Supporting Files */,
+				F1A83D58199C5A84005011D8 /* Bridge.h */,
 			);
 			path = PhotoSearch;
 			sourceTree = "<group>";
@@ -116,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1A3CB0B199C552B0015D57C /* Build configuration list for PBXNativeTarget "PhotoSearch" */;
 			buildPhases = (
+				E2B7AE86AF13412B855DDB19 /* Check Pods Manifest.lock */,
 				F1A3CAEB199C552B0015D57C /* Sources */,
 				F1A3CAEC199C552B0015D57C /* Frameworks */,
 				F1A3CAED199C552B0015D57C /* Resources */,
+				4C110C73AD10411B8183134A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +220,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C110C73AD10411B8183134A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2B7AE86AF13412B855DDB19 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1A3CAEB199C552B0015D57C /* Sources */ = {
@@ -324,23 +375,29 @@
 		};
 		F1A3CB0C199C552B0015D57C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B69C1F4A7D45DC8598938E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PhotoSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = PhotoSearch/Bridge.h;
 			};
 			name = Debug;
 		};
 		F1A3CB0D199C552B0015D57C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B69C1F4A7D45DC8598938E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PhotoSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = PhotoSearch/Bridge.h;
 			};
 			name = Release;
 		};
@@ -397,6 +454,7 @@
 				F1A3CB0D199C552B0015D57C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1A3CB0E199C552B0015D57C /* Build configuration list for PBXNativeTarget "PhotoSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +463,7 @@
 				F1A3CB10199C552B0015D57C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
