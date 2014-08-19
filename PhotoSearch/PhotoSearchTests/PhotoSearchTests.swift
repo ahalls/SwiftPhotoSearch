@@ -2,7 +2,7 @@
 //  PhotoSearchTests.swift
 //  PhotoSearchTests
 //
-//  Created by Andrew Halls on 8/14/14.
+//  Created by Andrew Halls on 8/19/14.
 //  Copyright (c) 2014 GaltSoft. All rights reserved.
 //
 

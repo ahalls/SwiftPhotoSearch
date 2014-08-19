@@ -1,50 +1,94 @@
-//
-//  ViewControllerTests.swift
-//  PhotoSearch
-//
-//  Created by Andrew Halls on 8/14/14.
-//  Copyright (c) 2014 GaltSoft. All rights reserved.
-//
 
 import UIKit
 import XCTest
+import PhotoSearch
 
 class ViewControllerTests: XCTestCase {
-  //  var storyBoard = UIStoryboard(name:"Main", bundle: nil)
-  // XCTAssertNotNil(storyBoard, "Test Not Configured Properly")
 
-  //  var viewController: AnyObject! = storyBoard.instantiateViewControllerWithIdentifier("ViewController")
+  func testItShouldLoad() {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let storyBoard = UIStoryboard(name:"Main", bundle: nil)
+    XCTAssertNotNil(storyBoard, "Test Not Configured Properly")
+
+    let viewController: ViewController =
+        storyBoard.instantiateInitialViewController() as ViewController
+    XCTAssertNotNil(viewController, "Test Not Configured Properly")
+
+    UIApplication.sharedApplication().keyWindow.rootViewController = viewController;
+
+  }
+
+
+
+func testItFetchData() {
+
+  var storyBoard = UIStoryboard(name:"Main", bundle: nil)
+  var viewController: ViewController? =
+  storyBoard.instantiateInitialViewController() as? ViewController
+  UIApplication.sharedApplication().keyWindow.rootViewController = viewController;
+
+
+  XCTAssertNotNil(viewController?.searchBar?.delegate);
+  viewController?.searchInstagramByHashtag("clararockmore")
+
+  let scrollView = viewController?.scrollView
+  XCTAssertNotNil(scrollView)
+
+  var count = 0
+  let expectedResult = 20
+
+  let expectation = expectationWithDescription("Fetching Instagram Data")
+  dispatch_async(dispatch_get_main_queue()) {
+    for _ in 1...50 {
+      //NSThread.sleepForTimeInterval(1)
+      sleep(1)
+      if let subs:NSArray  = scrollView?.subviews {
+          count = subs.count
+      }
+      println("count: \(count)")
+      if (count >= 20) {
+          break
+      }
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-
-  func testViewControllerLoad() {
-    var storyBoard: AnyObject! = UIStoryboard(name:"Main", bundle: nil)
-    XCTAssert(storyBoard != nil, "Test Not Configured Properly")
-
-    var viewController: AnyObject! = storyBoard.instantiateViewControllerWithIdentifier("ViewController")
-    XCTAssert(viewController != nil, "Test Not Configured Properly")
-
-
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    XCTAssert(count == 20)
+  }
+  waitForExpectationsWithTimeout(10, { error in
+      XCTFail("Test failed waiting for result with error: \(error?.description)")
+  })
 
 }
+}
+//  let expectation = expectationWithDescription("Fetching Instagram Data")
+//
+//  for _ in 1...50 {
+//   // NSThread.sleepForTimeInterval(1)
+//    var count = scrollView?.subviews.count
+//    println("count: \(count)")
+//    if count == 20 {
+//      expectation.fulfill()
+//      break
+//    }
+//    NSThread.sleepForTimeInterval(1000)
+//  }
+//  waitForExpectationsWithTimeout(10, { error in
+//    XCTFail("Test failed waiting for result with error: \(error?.description)")
+//  })
+//
+//  }
+
+//}
+
+
+//  func testItConnectIBOutlets() {
+//    var storyBoard = UIStoryboard(name:"Main", bundle: nil)
+//    XCTAssertNotNil(storyBoard, "Test Not Configured Properly")
+//
+//    var viewController: ViewController =
+//    storyBoard.instantiateInitialViewController() as ViewController
+//    XCTAssertNotNil(viewController, "Test Not Configured Properly")
+//
+//    XCTAssertNotNil(viewController.scrollView)
+//    XCTAssertNotNil(viewController.searchBar?.delegate);
+//
+//
+//  }

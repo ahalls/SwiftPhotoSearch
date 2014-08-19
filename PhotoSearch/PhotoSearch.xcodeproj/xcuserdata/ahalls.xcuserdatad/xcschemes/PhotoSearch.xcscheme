@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1A3CAEE199C552B0015D57C"
+               BlueprintIdentifier = "F112F7A719A2FC52005E4AAA"
                BuildableName = "PhotoSearch.app"
                BlueprintName = "PhotoSearch"
                ReferencedContainer = "container:PhotoSearch.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1A3CB00199C552B0015D57C"
+               BlueprintIdentifier = "F112F7B919A2FC52005E4AAA"
                BuildableName = "PhotoSearchTests.xctest"
                BlueprintName = "PhotoSearchTests"
                ReferencedContainer = "container:PhotoSearch.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1A3CB00199C552B0015D57C"
+               BlueprintIdentifier = "F112F7B919A2FC52005E4AAA"
                BuildableName = "PhotoSearchTests.xctest"
                BlueprintName = "PhotoSearchTests"
                ReferencedContainer = "container:PhotoSearch.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F1A3CAEE199C552B0015D57C"
+            BlueprintIdentifier = "F112F7A719A2FC52005E4AAA"
             BuildableName = "PhotoSearch.app"
             BlueprintName = "PhotoSearch"
             ReferencedContainer = "container:PhotoSearch.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F1A3CAEE199C552B0015D57C"
+            BlueprintIdentifier = "F112F7A719A2FC52005E4AAA"
             BuildableName = "PhotoSearch.app"
             BlueprintName = "PhotoSearch"
             ReferencedContainer = "container:PhotoSearch.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F1A3CAEE199C552B0015D57C"
+            BlueprintIdentifier = "F112F7A719A2FC52005E4AAA"
             BuildableName = "PhotoSearch.app"
             BlueprintName = "PhotoSearch"
             ReferencedContainer = "container:PhotoSearch.xcodeproj">
