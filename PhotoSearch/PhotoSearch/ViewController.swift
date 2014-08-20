@@ -8,26 +8,26 @@
 
 import UIKit
 
-public class ViewController: UIViewController, UISearchBarDelegate {
+ class ViewController: UIViewController, UISearchBarDelegate {
 
-  @IBOutlet public weak var searchBar: UISearchBar!
-  @IBOutlet public weak var scrollView: UIScrollView!
+  @IBOutlet  weak var searchBar: UISearchBar!
+  @IBOutlet  weak var scrollView: UIScrollView!
 
   let instagramClientID = "d782212a48f44653bea97452dd87da2b"
 
-  public func searchInstagramByHashtag(searchString: String) {
+  func searchInstagramByHashtag(searchString: String) {
     for subview in self.scrollView.subviews {
       subview.removeFromSuperview()
     }
 
     let instagramURLString = "https://api.instagram.com/v1/tags/" + searchString + "/media/recent?client_id=" + instagramClientID
-
+    println("url: \(instagramURLString)")
     let manager = AFHTTPRequestOperationManager()
 
     manager.GET( instagramURLString,
       parameters: nil,
       success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-        println("JSON: " + responseObject.description)
+        // println("JSON: " + responseObject.description)
 
         if let dataArray = responseObject.valueForKey("data") as? [AnyObject] {
           self.scrollView.contentSize = CGSizeMake(320, CGFloat(320*dataArray.count))
@@ -36,9 +36,10 @@ public class ViewController: UIViewController, UISearchBarDelegate {
             if let imageURLString = dataObject.valueForKeyPath("images.standard_resolution.url") as? String {
               println("image " + String(i) + " URL is " + imageURLString)
 
-              let imageView = UIImageView(frame: CGRectMake(0, CGFloat(320*i), 320, 320))
+              let imageData =  NSData(contentsOfURL: NSURL(string: imageURLString))
+              let imageView = UIImageView(image: UIImage(data: imageData))
+              imageView.frame = CGRectMake(0, CGFloat(320*i), 320, 320)
               self.scrollView.addSubview(imageView)
-              imageView.setImageWithURL( NSURL(string: imageURLString))
             }
           }
         }
@@ -48,23 +49,57 @@ public class ViewController: UIViewController, UISearchBarDelegate {
     })
   }
 
-   public func searchBarSearchButtonClicked(searchBar: UISearchBar!) {
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar!) {
 
     searchBar.resignFirstResponder()
     searchInstagramByHashtag(searchBar.text)
   }
 
-  public override func viewDidLoad() {
+   override func viewDidLoad() {
     super.viewDidLoad()
     assert( (scrollView != nil), "scrollView not linked in the Storyboard")
     assert( (searchBar?.delegate != nil), "searchBar.delegate not linked in the Storyboard")
 
     //searchInstagramByHashtag("clararockmore")
   }
-  public override func didReceiveMemoryWarning() {
+   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 }
 
+//MARK:  Test Fixtures
+//#if TEST
+
+class Observer: NSObject {
+  let function:() -> Void
+  init(function: () -> Void) {
+    self.function = function
+  }
+  override func observeValueForKeyPath( keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<()> ) {
+    function()
+
+  }
+
+
+}
+var  observerList = Array<Observer>()
+
+extension ViewController {
+
+   func searchFor (searchTerm: String) {
+    self.searchBar.text = searchTerm
+    self.searchBarSearchButtonClicked(self.searchBar)
+  }
+
+  func addSearchDataObserver(function: () -> Void) -> Void {
+    println("\(self.scrollView)")
+    let  observer = Observer(function)
+    self.scrollView.addObserver(observer, forKeyPath: "contentSize", options: nil, context: nil)
+    observerList.append(observer)
+  }
+
+ }
+//#endif
 

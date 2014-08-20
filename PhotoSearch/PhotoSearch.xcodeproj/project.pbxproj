@@ -14,6 +14,8 @@
 		F112F7B519A2FC52005E4AAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F112F7B419A2FC52005E4AAA /* Images.xcassets */; };
 		F112F7C119A2FC52005E4AAA /* PhotoSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112F7C019A2FC52005E4AAA /* PhotoSearchTests.swift */; };
 		F112F7CC19A30315005E4AAA /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112F7CB19A30315005E4AAA /* ViewControllerTests.swift */; };
+		F199850419A3F589002B1F53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112F7AF19A2FC52005E4AAA /* ViewController.swift */; };
+		F199850519A3F591002B1F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F112F7B119A2FC52005E4AAA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F199850519A3F591002B1F53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F199850419A3F589002B1F53 /* ViewController.swift in Sources */,
 				F112F7CC19A30315005E4AAA /* ViewControllerTests.swift in Sources */,
 				F112F7C119A2FC52005E4AAA /* PhotoSearchTests.swift in Sources */,
 			);
@@ -383,6 +387,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"$(PROJECT_ROOT)/PhotoSearch\"",
+				);
 				INFOPLIST_FILE = PhotoSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -396,6 +405,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"$(PROJECT_ROOT)/PhotoSearch\"",
+				);
 				INFOPLIST_FILE = PhotoSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +437,8 @@
 				);
 				INFOPLIST_FILE = PhotoSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DTEST";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DTEST";
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = PhotoSearch/Bridge.h;
@@ -446,6 +462,7 @@
 				);
 				INFOPLIST_FILE = PhotoSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DTEST";
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = PhotoSearch/Bridge.h;
